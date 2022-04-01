@@ -111,3 +111,13 @@ document
       document.querySelector(".important-answer").style.display = "none";
     }
   });
+
+const sebha = document.querySelector("#subha");
+sebha.addEventListener("click", function () {
+  gsap.to("main", { duration: 0.5, opacity: 0, x: 2000, display: "none" });
+  gsap.fromTo(
+    ".sebha-page",
+    { x: -1000, opacity: 0 },
+    { x: 0, opacity: 1, display: "flex", delay: 0.5, duration: 1 }
+  );
+});
