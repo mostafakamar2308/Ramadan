@@ -98,3 +98,16 @@ document
       document.querySelector(".abada-answer").style.display = "none";
     }
   });
+
+document
+  .querySelector(".important-question")
+  .addEventListener("click", function () {
+    if (
+      !document.querySelector(".important-answer").style.display ||
+      document.querySelector(".important-answer").style.display == "none"
+    ) {
+      document.querySelector(".important-answer").style.display = "block";
+    } else {
+      document.querySelector(".important-answer").style.display = "none";
+    }
+  });
