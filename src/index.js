@@ -36,14 +36,14 @@ readyBtn.addEventListener("click", function () {
     console.log("Let's get ready for ramadan");
   }
 });
-planBtn.addEventListener("click", function () {
-  if (user == undefined) {
-    signInFunction().then(() => {
-      planBtn.click();
-    });
-  } else {
-    console.log("Let's focus on ramadan");
-  }
-});
+// planBtn.addEventListener("click", function () {
+//   if (user == undefined) {
+//     signInFunction().then(() => {
+//       planBtn.click();
+//     });
+//   } else {
+//     console.log("Let's focus on ramadan");
+//   }
+// });
 let today = new hijriDate();
 date.textContent = `${today.year} - ${today.month} - ${today.date}`;
