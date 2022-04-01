@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramadan App</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Mirza:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      * {
+        font-family: "Amiri", serif;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="logo">رمضان</a>
+        <ul>
+          <li><a href="#">المسبحة الرمضانية</a></li>
+          <li><a href="#">الادعية الجامعة</a></li>
+          <li><a href="#">القرءان الكريم</a></li>
+          <li class="user-settings">
+            <a href="#"><i class="material-icons">account_circle</i></a>
+            <ul class="log-list">
+              <li id="sign-in">تسجيل الدخول</li>
+            </ul>
+          </li>
+          <li class="user-page">
+            <img id="user-img" src="" alt="" referrerpolicy="no-referrer" />
+            <ul class="log-out">
+              <li id="log-out">تسجيل الخروج</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <div class="intro-text">
+        <div class="bet">
+          <h1>وَتَهيّؤوا لِتَصَبُّرٍ ومشقَّةٍ</h1>
+          <h1>فَأجورُ من صَبَروا بِغيرِ حِسابِ</h1>
+        </div>
+        <div class="bet">
+          <h1>لا يَدخلُ الريَّانَ إلّا صائمٌ</h1>
+          <h1>أَكْرِمْ ببابِ الصْومِ في الأبوابِ</h1>
+        </div>
+      </div>
+      <div class="intro-btns">
+        <button id="ready">استعد لرمضان</button>
+        <button id="plan">خطة رمضان</button>
+      </div>
+    </main>
+    <img class="background one" src="./lantern.png" alt="" />
+    <img class="background two" src="./lantern.png" alt="" />
+    <img class="background three" src="./lantern.png" alt="" />
+    <img class="background four" src="./lantern.png" alt="" />
+    <span class="date-hijri"></span>
+    <script src="./main.js"></script>
+  </body>
+</html>
