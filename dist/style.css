@@ -164,10 +164,17 @@
     width: 100vw;
   }
   #verses {
+    color: white;
     width: 60%;
     height: fit-content;
     font-size: 1.5rem;
   }
+  .control-aya * {
+    color: #1a1a1a;
+    width: fit-content;
+    padding: 0.5rem;
+  }
+
   .intro-text {
     width: 80%;
   }

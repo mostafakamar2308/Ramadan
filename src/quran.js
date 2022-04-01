@@ -1,38 +1,73 @@
 import gsap from "gsap";
-let page = {};
+
 let localStorage = window.localStorage;
-let pageNum;
+const back = document.querySelector("#backward-aya");
+const forward = document.querySelector("#forward-aya");
+const pageNumInput = document.querySelector("#pageNum");
 if (!localStorage.getItem("pageNum")) {
   localStorage.setItem("pageNum", "1");
-  pageNum = 1;
+  pageNumInput.value = 1;
 } else {
-  pageNum = localStorage.getItem("pageNum");
+  pageNumInput.value = localStorage.getItem("pageNum");
 }
 const quranBtn = document.querySelector("#Quran");
 quranBtn.addEventListener("click", function () {
+  gsap.to("main", { duration: 0.5, x: 2000, opacity: 0, display: "none" });
+  gsap.fromTo(
+    ".quran-tab",
+    { y: -1000, opacity: 0 },
+    { duration: 1, opacity: 1, y: 0, display: "flex", delay: 0.5 }
+  );
+  WriteAya();
+});
+back.addEventListener("click", function () {
+  if (pageNumInput.value < 2) {
+    pageNumInput.value = 1;
+    WriteAya();
+  } else {
+    pageNumInput.value--;
+    WriteAya();
+  }
+  localStorage.setItem("pageNum", pageNumInput.value);
+});
+forward.addEventListener("click", function () {
+  if (pageNumInput.value > 603) {
+    pageNumInput.value = 604;
+    WriteAya();
+  } else {
+    pageNumInput.value++;
+    WriteAya();
+  }
+  localStorage.setItem("pageNum", pageNumInput.value);
+});
+pageNumInput.addEventListener("change", function () {
+  if (pageNumInput.value > 603) {
+    pageNumInput.value = 604;
+    WriteAya();
+  } else if (pageNumInput.value < 2) {
+    pageNumInput.value = 1;
+    WriteAya();
+  } else {
+    WriteAya();
+  }
+  localStorage.setItem("pageNum", pageNumInput.value);
+});
+function WriteAya() {
   fetch(
-    `https://api.quran.com/api/v4/quran/verses/uthmani?page_number=${pageNum}`
+    `https://api.quran.com/api/v4/quran/verses/uthmani?page_number=${pageNumInput.value}`
   )
     .then((respone) => {
       return respone.json();
     })
     .then((res) => {
-      gsap.to("main", { duration: 0.5, x: 2000, opacity: 0, display: "none" });
-      gsap.fromTo(
-        ".quran-tab",
-        { y: -1000, opacity: 0 },
-        { duration: 1, opacity: 1, y: 0, display: "flex", delay: 0.5 }
-      );
       let verses = res.verses;
-      let h = document.createElement("p");
-      h.id = "verses";
+      let h = document.querySelector("#verses");
+      h.innerHTML = "";
       Object.keys(verses).forEach((ele) => {
-        console.log(verses[ele].verse_key.split(":"));
         h.innerHTML +=
           verses[ele].text_uthmani +
           `&#xFD3F;${verses[ele].verse_key.split(":")[1]}&#xFD3E;`;
-        console.log(verses[ele].text_uthmani);
       });
-      document.querySelector(".quran-tab").appendChild(h);
+      console.log(verses);
     });
-});
+}
