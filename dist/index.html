@@ -27,7 +27,6 @@
       <a href="#" class="logo">رمضان</a>
       <ul>
         <li><a href="#" id="subha">المسبحة الرمضانية</a></li>
-        <li><a href="#">الادعية الجامعة</a></li>
         <li><a href="#" id="Quran">القرءان الكريم</a></li>
         <li class="user-settings">
           <a href="#"><i class="material-icons">account_circle</i></a>
@@ -57,7 +56,7 @@
     </div>
     <div class="intro-btns">
       <button id="ready">استعد لرمضان</button>
-      <button id="plan " disabled>خطة رمضان</button>
+      <button id="plan" >خطة رمضان</button>
     </div>
   </main>
   <section class="quran-tab">
@@ -160,12 +159,46 @@
     </button>
   </section>
   <section class="my-plan">
-    <h2 for="">اختر وقتا للعبادة:</h2>
-    <input type="radio" name="time" id="before-fajr" />
-    <label for="third">الثلث الاخير من الليل</label>
+    <div class="makePlan">
+      <div class="modal-container">
+        <div class="plan-instructions">
+          <h1>نصائح لخطط واقعية</h1>
+          <ol>
+            <li>اجعل خططك بسيطة قدر الامكان</li>
+            <li>حافظ علي وردك اليومى وتسابق في الختمة مع استغلال الاوقات البينية</li>
+            <li>ركز علي شيئين بسيطين، مثلا تدبر جزء عم مع الحفاظ علي الاذكار</li>
+            <li>حدد وقتا يوميا مخصصا للعبادة</li>
+            <li>لا تعتمد علي الحماس بل علي النظام</li>
+          </ol>
+        </div>
+      </div>
+      <form action="">
+        <h2 for="">اختر وقتا للعبادة:</h2>
+        <div class="radio-container">
 
-    <input type="radio" name="time" id="after-fajr" />
-    <label for="after-fajr">جلسة الشروق</label>
+          <input type="radio" name="time" id="before-fajr" />
+          <label for="third">الثلث الاخير من الليل</label>
+          
+          <input type="radio" name="time" id="after-fajr" checked/>
+          <label for="after-fajr">جلسة الشروق</label>
+        </div>
+      
+      <h2>ما أهدافك من رمضان في هذه السنة؟</h2>
+      <input type="text" class="focus-1">
+      <input type="text" class="focus-2">
+
+      <h2>هتتابع مع سلسلة معينة؟</h2>
+      <input type="text" id="youtube" placeholder="ضع لينك السلسلة من اليوتيوب">
+
+      <h2>كم عدد الختمات التى تريدها</h2>
+      <input id = "khatma" type="number" max="5" value="1" min="1">
+      <input type="submit" value="ضع خطة رمضان" id="submit-plan">
+    </form>
+
+    </div>
+    <div class="ShowPlan">
+      My plan
+    </div>
   </section>
   <section class="sebha-page">
     <canvas id="sebha-canvas"></canvas>

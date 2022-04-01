@@ -12,7 +12,14 @@ if (!localStorage.getItem("pageNum")) {
 }
 const quranBtn = document.querySelector("#Quran");
 quranBtn.addEventListener("click", function () {
-  gsap.to("main", { duration: 0.5, x: 2000, opacity: 0, display: "none" });
+  gsap.to("main", { duration: 0.5, opacity: 0, display: "none" });
+  gsap.to(".plan", { duration: 0.5, opacity: 0, display: "none" });
+  gsap.to(".sebha-page", {
+    duration: 0.5,
+    x: 2000,
+    opacity: 0,
+    display: "none",
+  });
   gsap.fromTo(
     ".quran-tab",
     { y: -1000, opacity: 0 },

@@ -1,4 +1,4 @@
-import { user, signInFunction } from "./firebase";
+import { user, signInFunction, thePlan } from "./firebase";
 import gsap from "gsap";
 import "hijri-date";
 import hijriDate from "hijri-date";
@@ -6,6 +6,7 @@ const userBtn = document.querySelector(".user-settings");
 const userSettings = document.querySelector(".log-list");
 const date = document.querySelector(".date-hijri");
 const mainMenu = document.querySelector(".logo");
+export let plan;
 
 document.body.addEventListener("click", function (e) {
   if (
@@ -37,6 +38,8 @@ readyBtn.addEventListener("click", function () {
   } else {
     console.log("Let's get ready for ramadan");
     gsap.to("main", { duration: 0.5, opacity: 0, display: "none" });
+    gsap.to(".quran-tab", { duration: 0.5, opacity: 0, display: "none" });
+    gsap.to(".sebha-page", { duration: 0.5, opacity: 0, display: "none" });
     gsap.fromTo(
       ".plan",
       { y: 1000, opacity: 0, display: "none" },
@@ -44,20 +47,42 @@ readyBtn.addEventListener("click", function () {
     );
   }
 });
-// planBtn.addEventListener("click", function () {
-//   if (user == undefined) {
-//     signInFunction().then(() => {
-//       planBtn.click();
-//     });
-//   } else {
-//     console.log("Let's focus on ramadan");
-//   }
-// });
+planBtn.addEventListener("click", function () {
+  if (user == undefined) {
+    signInFunction().then(() => {
+      planBtn.click();
+    });
+  } else {
+    console.log("Let's focus on ramadan");
+    gsap.to("main", { duration: 0.5, opacity: 0, display: "none" });
+    gsap.to(".quran-tab", { duration: 0.5, opacity: 0, display: "none" });
+    gsap.to(".sebha-page", { duration: 0.5, opacity: 0, display: "none" });
+    gsap.to(".plan", { duration: 0.5, opacity: 0, display: "none" });
+    gsap.fromTo(
+      ".my-plan",
+      { scale: 0, opacity: 0 },
+      { duration: 1, delay: 0.5, opacity: 1, scale: 1, display: "flex" }
+    );
+    planShow();
+  }
+});
+function planShow() {
+  console.log(thePlan);
+  if (thePlan == false) {
+    document.querySelector(".ShowPlan").style.display = "none";
+    document.querySelector(".makePlan").style.display = "block";
+  } else {
+    document.querySelector(".ShowPlan").style.display = "block";
+    document.querySelector(".makePlan").style.display = "none";
+  }
+}
 let today = new hijriDate();
 date.textContent = `${today.year} - ${today.month} - ${today.date}`;
 
 mainMenu.addEventListener("click", function () {
   gsap.to(".quran-tab", { duration: 0.5, opacity: 0, display: "none" });
+  gsap.to(".sebha-page", { duration: 0.5, opacity: 0, display: "none" });
+  gsap.to(".plan", { duration: 0.5, opacity: 0, display: "none" });
   gsap.fromTo(
     "main",
     { x: 2000, opacity: 0 },
@@ -115,9 +140,18 @@ document
 const sebha = document.querySelector("#subha");
 sebha.addEventListener("click", function () {
   gsap.to("main", { duration: 0.5, opacity: 0, x: 2000, display: "none" });
+  gsap.to(".plan", { duration: 0.5, opacity: 0, display: "none" });
+  gsap.to(".quran-tab", { duration: 0.5, opacity: 0, display: "none" });
   gsap.fromTo(
     ".sebha-page",
     { x: -1000, opacity: 0 },
     { x: 0, opacity: 1, display: "flex", delay: 0.5, duration: 1 }
   );
 });
+document
+  .querySelector(".modal-container")
+  .addEventListener("click", function (e) {
+    if (e.target.classList.contains("modal-container")) {
+      document.querySelector(".modal-container").style.display = "none";
+    }
+  });

@@ -256,6 +256,7 @@
   }
   .my-plan {
     display: none;
+    width: 95vw;
   }
   .plan div > h1 {
     background: rgba(255, 255, 255, 0.08);
@@ -345,5 +346,93 @@
     width: 100%;
     height: 100%;
     z-index: -1;
+  }
+  .modal-container {
+    width: 100vw;
+    height: 110vh;
+    background-color: rgba(0, 0, 0, 0.644);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    position: absolute;
+    top: -20vh;
+  }
+  .plan-instructions {
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 1rem 3rem;
+  }
+  .plan-instructions * {
+    color: #1a1a1a;
+    font-size: 1.5rem;
+  }
+  .plan-instructions h1 {
+    text-align: center;
+  }
+  .makePlan {
+    width: 100%;
+  }
+  .makePlan form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 4rem;
+  }
+
+  .makePlan form * {
+    color: #0e0d0d;
+    font-size: 1.2rem;
+  }
+  .makePlan form input {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  input[type="submit"] {
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px 0px rgb(36, 35, 35),
+      -2px -2px 8px 0 rgb(216, 212, 212);
+    transition: 0.5s;
+  }
+  input[type="submit"]:hover {
+    box-shadow: inset 2px 2px 8px 0px rgb(36, 35, 35),
+      -2px -2px 8px 0 rgb(216, 212, 212) inset;
+  }
+  #pass-modal {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0e0d0da1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #pass-modal div {
+    background-color: white;
+    width: 40%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #pass-modal h1 {
+    font-size: 2rem;
+    color: black;
+  }
+  #pass-modal button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.5rem;
+    background-color: transparent;
+    color: black;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgb(47, 47, 47), -3px -3px 5px rgb(175, 171, 171);
   }
 }
