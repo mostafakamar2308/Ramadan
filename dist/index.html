@@ -1,82 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ramadan App</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Mirza:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
 
-    <style>
-      * {
-        font-family: "Amiri", serif;
-        text-decoration: none;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramadan App</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Mirza:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 
-  <body>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="logo">رمضان</a>
-        <ul>
-          <li><a href="#">المسبحة الرمضانية</a></li>
-          <li><a href="#">الادعية الجامعة</a></li>
-          <li><a href="#" id="Quran">القرءان الكريم</a></li>
-          <li class="user-settings">
-            <a href="#"><i class="material-icons">account_circle</i></a>
-            <ul class="log-list">
-              <li id="sign-in">تسجيل الدخول</li>
+  <style>
+    * {
+      font-family: "Amiri", serif;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="logo">رمضان</a>
+      <ul>
+        <li><a href="#">المسبحة الرمضانية</a></li>
+        <li><a href="#">الادعية الجامعة</a></li>
+        <li><a href="#" id="Quran">القرءان الكريم</a></li>
+        <li class="user-settings">
+          <a href="#"><i class="material-icons">account_circle</i></a>
+          <ul class="log-list">
+            <li id="sign-in">تسجيل الدخول</li>
+          </ul>
+        </li>
+        <li class="user-page">
+          <img id="user-img" src="" alt="" referrerpolicy="no-referrer" />
+          <ul class="log-out">
+            <li id="log-out">تسجيل الخروج</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="intro-text">
+      <div class="bet">
+        <h1>وَتَهيّؤوا لِتَصَبُّرٍ ومشقَّةٍ</h1>
+        <h1>فَأجورُ من صَبَروا بِغيرِ حِسابِ</h1>
+      </div>
+      <div class="bet">
+        <h1>لا يَدخلُ الريَّانَ إلّا صائمٌ</h1>
+        <h1>أَكْرِمْ ببابِ الصْومِ في الأبوابِ</h1>
+      </div>
+    </div>
+    <div class="intro-btns">
+      <button id="ready">استعد لرمضان</button>
+      <button id="plan " disabled>خطة رمضان</button>
+    </div>
+  </main>
+  <section class="quran-tab">
+    <p id="verses"></p>
+    <div class="control-aya">
+      <button id="backward-aya">&lt;</button>
+      <input id="pageNum" type="number" name="" id="" min="1" max="604" />
+      <button id="forward-aya">&gt;</button>
+    </div>
+  </section>
+  <section class="plan">
+    <div class="ready">
+      <h1 class="time-question">كيف تدير وقتك في رمضان؟</h1>
+      <ol class="time-answer">
+        <li>اختر بين جلسة الشروق أو الثلث الأخير من الليل</li>
+        <li>إن اخترت أحدهما فالاخر سيكون وقت نومك</li>
+        <li>
+          الوقت الذي ستختاره هو وقت مخصص للعبادة، اقرأ وردك اليومى واذكر الله
+          أو تابع سلسلة معينة في ذلك الوقت (وأقم الليل إن اخترت الثلث الاخير
+          من الليل)
+        </li>
+        <li>صل صلاة الضحى</li>
+        <li>أذكار الصباح</li>
+        <li>
+          استغل الأوقات البينية (المواصلات، راحة بين المحاضرات) في ذكر الله أو
+          قراءة وردك من القرءان
+        </li>
+        <li>
+          حدد لك نية قبل كل الاعمال الروتينية مثلا:
+          <div class="Intention">
+            <ul>
+              <li>
+                العمل: نية كفاية النفس عن سؤال الناس، ونية الانفاق علي النفس
+                والعائلة وإدخال السرور علي قلب الأطفال
+              </li>
+              <li>
+                الدراسة: نية طلب العلم، ونفع المسلمين وإدخال السرور علي الاهل
+              </li>
+              <li>الطعام والنوم: نية الراحة للتقوى علي العبادة</li>
             </ul>
-          </li>
-          <li class="user-page">
-            <img id="user-img" src="" alt="" referrerpolicy="no-referrer" />
-            <ul class="log-out">
-              <li id="log-out">تسجيل الخروج</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <main>
-      <div class="intro-text">
-        <div class="bet">
-          <h1>وَتَهيّؤوا لِتَصَبُّرٍ ومشقَّةٍ</h1>
-          <h1>فَأجورُ من صَبَروا بِغيرِ حِسابِ</h1>
-        </div>
-        <div class="bet">
-          <h1>لا يَدخلُ الريَّانَ إلّا صائمٌ</h1>
-          <h1>أَكْرِمْ ببابِ الصْومِ في الأبوابِ</h1>
-        </div>
-      </div>
-      <div class="intro-btns">
-        <button id="ready">استعد لرمضان</button>
-        <button id="plan " disabled>خطة رمضان</button>
-      </div>
-    </main>
-    <section class="quran-tab">
-      <p id="verses"></p>
-      <div class="control-aya">
-        <button id="backward-aya">&lt;</button>
-        <input id="pageNum" type="number" name="" id="" min="1" max="604" />
-        <button id="forward-aya">&gt;</button>
-      </div>
-    </section>
-    <img class="background one" src="./lantern.png" alt="" />
-    <img class="background two" src="./lantern.png" alt="" />
-    <img class="background three" src="./lantern.png" alt="" />
-    <img class="background four" src="./lantern.png" alt="" />
-    <span class="date-hijri"></span>
-    <script src="./main.js"></script>
-  </body>
+          </div>
+        </li>
+        <li>
+          عند انتهاءك من العمل وعودتك للمنزل نم واستيقظ قبل المغرب وادع الله
+          حتي الاذان
+        </li>
+        <li>بعد المغرب اجلس مع أهلك</li>
+        <li>صل العشاء والتراويح وصل رحمك وكلم أصدقاءك</li>
+      </ol>
+    </div>
+    <div class="abada-small">
+      <h1 class="abada-question">عبادات صغيرة وبسيطة وأجرها عال جدا</h1>
+      <ul class="abada-answer">
+        <li>إفشاء السلام</li>
+        <li>الابتسامة</li>
+        <li>ذكر الله</li>
+        <li>أذكار الصباح والمساء</li>
+      </ul>
+    </div>
+    <div class="ramadan-sit">
+      <h1 class="sit-question">مجالس أنصح بسماعها قبل دخول رمضان</h1>
+      <ul class="sit-answer">
+        <li>
+          <a href="https://www.youtube.com/watch?v=qS_D9AW3TPg&t" target="_blank">وعي ٣٣ | معنى التوبة وطرق عملية لنتوب
+            بصدق وماذا نفعل إذا عدنا
+            للذنب وفرح الله بالتائب</a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=FhVv2Ovy0T0" target="_blank">وعي ٣٦ | توعية بحقيقة الدنيا وآثار
+            استيعاب قيمتها وطرق لتقليل
+            حبها في قلوبنا
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=rIaqApE0aGc" target="_blank">وعي ٤٠ | كيفية استقبال رمضان للعصاة
+            (كلنا) ولأصحاب الهمم
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=fqL5bKCZlMw&t" target="_blank">وعي ١١ | الفتور في رمضان وحسن التعامل
+            مع النفس وقيمة التفرغ
+            للعبادة وطريقة دعاء الأنبياء
+          </a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <button id="make-a-plan" disabled>
+      ضع خطة
+    </button>
+  </section>
+  <section class="my-plan">
+    <h2 for="">اختر وقتا للعبادة:</h2>
+    <input type="radio" name="time" id="before-fajr" />
+    <label for="third">الثلث الاخير من الليل</label>
+
+    <input type="radio" name="time" id="after-fajr" />
+    <label for="after-fajr">جلسة الشروق</label>
+  </section>
+  <img class="background one" src="./lantern.png" alt="" />
+  <img class="background two" src="./lantern.png" alt="" />
+  <img class="background three" src="./lantern.png" alt="" />
+  <img class="background four" src="./lantern.png" alt="" />
+  <span class="date-hijri"></span>
+  <script src="./main.js"></script>
+</body>
+
 </html>

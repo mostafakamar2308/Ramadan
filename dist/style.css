@@ -36,13 +36,13 @@
     font-family: "Mirza", cursive;
     margin-bottom: 1rem;
   }
-  ul {
+  nav ul {
     list-style: none;
     display: flex;
     justify-content: left;
     align-items: center;
   }
-  ul li {
+  nav ul li {
     border: 1px solid transparent;
     padding: 0 1rem;
     transition: 0.3s;
@@ -57,9 +57,12 @@
     z-index: 99;
     font-size: 2.5rem;
   }
-  ul li:hover {
+  nav ul li:hover {
     border: 1px solid rgba(218, 213, 213, 0.466);
     background-color: rgba(218, 213, 213, 0.466);
+  }
+  .Intention {
+    padding-right: 1rem;
   }
   .user-settings:hover {
     border: 1px solid transparent;
@@ -130,6 +133,7 @@
     position: absolute;
     top: 0;
     z-index: -1;
+    filter: blur(1px);
   }
   .one {
     height: 40%;
@@ -138,10 +142,12 @@
   .two {
     height: 20%;
     left: 20%;
+    filter: blur(2.5px);
   }
   .three {
     height: 30%;
     left: 50%;
+    filter: blur(2px);
   }
   .four {
     height: 40%;
@@ -161,7 +167,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 100vw;
+    width: 95vw;
   }
   #verses {
     color: white;
@@ -169,6 +175,18 @@
     height: fit-content;
     font-size: 1.5rem;
   }
+  .plan {
+    min-height: 75%;
+    width: 95vw;
+    margin: 0 auto;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+  }
+
   .control-aya * {
     color: #1a1a1a;
     width: fit-content;
@@ -193,23 +211,67 @@
     cursor: pointer;
     transition: all 0.5s;
   }
+  .time-answer,
+  .abada-answer,
+  .sit-answer {
+    display: none;
+    padding: 0rem 2.5rem;
+  }
+  .ready,
+  .abada-small,
+  .ramadan-sit {
+    border: 1px solid rgba(255, 255, 255, 0.534);
+    border-radius: 15px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
   .intro-btns *:hover {
     background-color: white;
     color: #1a1a1a;
     transform: translateY(-10%);
   }
-  :disabled {
-    background-color: rgb(185, 177, 177);
-    color: #252525;
-  }
-  :disabled:hover {
-    color: #252525;
-    background-color: rgb(185, 177, 177);
-    transform: translateY(0);
-  }
+
   .date-hijri {
-    position: absolute;
+    position: fixed;
     bottom: 3%;
     left: 2%;
+  }
+  .my-plan {
+    display: none;
+  }
+  .plan div > h1 {
+    background-color: rgba(255, 255, 255, 0.774);
+    border-radius: 15px;
+    width: 100%;
+    color: #1a1a1a;
+    cursor: pointer;
+  }
+  .time ol {
+    display: none;
+    padding: 0 2.5rem;
+  }
+  .sit-answer {
+    list-style: none;
+  }
+  #make-a-plan {
+    border: 1px solid white;
+    background-color: transparent;
+    transition: 0.5s;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+  }
+  #make-a-plan:hover {
+    background-color: white;
+    color: #1a1a1a;
+  }
+  :disabled {
+    background-color: rgb(185, 177, 177) !important;
+    color: #252525 !important;
+  }
+  :disabled:hover {
+    color: #252525 !important;
+    background-color: rgb(185, 177, 177) !important;
+    transform: translateY(0) !important;
   }
 }
